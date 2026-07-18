@@ -19,8 +19,12 @@ Character <- R6Class(
     avg_damage = NULL,
     initialize = function(name, race = NULL, min_damage = 0, max_damage = 0) {
       checkmate::assert_string(name)
-      checkmate::assert_string(race, null.ok = T)
-      checkmate::assert_choice(race, c("Elf", "Half-Elf", "Human"), null.ok = T)
+      checkmate::assert_string(race, null.ok = TRUE)
+      checkmate::assert_choice(
+        race,
+        c("Elf", "Half-Elf", "Human"),
+        null.ok = TRUE
+      )
       checkmate::assert_number(min_damage)
       checkmate::assert_number(max_damage)
       self$name <- name
@@ -68,7 +72,7 @@ battle <- function(character_1, character_2, health = 100.0) {
   } else {
     logger$info("Character {character_2$name} has initiative!")
   }
-  while (T) {
+  repeat {
     if (initiative < 0.5) {
       attack <- character_1$attack()
       logger$info("Character {character_1$name} deals {attack} damage!")
