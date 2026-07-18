@@ -1,0 +1,12 @@
+Logger:
+  threshold: info
+  propagate: false
+  appenders:
+    AppenderConsole:
+      threshold: info
+    AppenderFile:
+      file: "log.txt"
+      threshold: all
+    AppenderJson:
+      file: "log.json"
+      threshold: all
