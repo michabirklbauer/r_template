@@ -18,5 +18,7 @@ jobs:
     - uses: r-lib/actions/setup-renv@v2
     - name: Test with testthat
       run: |
+        print(getwd())
+        print(list.files(recursive=T))
         source("tests/testthat.R⁠")
       shell: Rscript {0}
