@@ -16,4 +16,4 @@ jobs:
     - uses: r-lib/actions/setup-renv@v2
     - name: Test with testthat
       run: |
-        R --file=tests/testthat.R⁠
+        Rscript tests/testthat.R⁠
