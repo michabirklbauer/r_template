@@ -9,8 +9,19 @@
 
 library(testthat)
 
-testthat::test_dir(
+test_results <- testthat::test_dir(
   "tests/testthat",
   stop_on_failure = TRUE,
   stop_on_warning = TRUE
 )
+
+status <- as.data.frame(test_results)
+failed <- sum(status$failed)
+errors <- any(status$error)
+warnings <- sum(status$warning)
+
+success <- all(c(failed == 0, !errors, warnings == 0))
+exit_code <- if (success) 0 else 1
+
+stopifnot(success)
+q(status = exit_code)
