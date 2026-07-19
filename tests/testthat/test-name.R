@@ -3,5 +3,5 @@ test_that("multiplication works", {
 })
 
 test_that("multiplication doesn't work", {
-  expect_equal(2 * 2, 5)
+  expect_equal(2 * 2, 4)
 })
