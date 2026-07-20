@@ -16,6 +16,7 @@ battle <- function(character_1, character_2, health = 100.0) {
   health_1 <- health
   health_2 <- health
   logger$info("---------- BATTLE ----------")
+  logger$info("Both characters have {health} hit points! The battle begins:")
   initiative <- runif(1)
   if (initiative < 0.5) {
     logger$info("Character {character_1$name} has initiative!")
