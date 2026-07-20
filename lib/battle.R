@@ -15,7 +15,7 @@ battle <- function(character_1, character_2, health = 100.0) {
   checkmate::assert_number(health, lower = 1.0)
   health_1 <- health
   health_2 <- health
-  logger$info("---------- BATTLE ----------")
+  logger$info("---------- BATTLE START ----------")
   logger$info("Both characters have {health} hit points! The battle begins:")
   initiative <- runif(1)
   if (initiative < 0.5) {
@@ -55,8 +55,10 @@ battle <- function(character_1, character_2, health = 100.0) {
   }
   if (health_1 <= 0) {
     logger$info("Character {character_2$name} won!")
+    logger$info("----------- BATTLE END -----------")
     return(character_2)
   }
   logger$info("Character {character_1$name} won!")
+  logger$info("----------- BATTLE END -----------")
   return(character_1)
 }
