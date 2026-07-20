@@ -68,18 +68,43 @@ main <- function(cli_args = NULL) {
     }
     cli_args <- optparse::parse_args(parser, args = cli_args)
   }
-
-  characters <- character_factory(cli_args$file)
-  winner <- battle(
-    characters[[cli_args$c1]],
-    characters[[cli_args$c2]],
-    health = cli_args$health
+  exit_status <- tryCatch(
+    {
+      characters <- character_factory(cli_args$file)
+      character_1 <- as.integer(cli_args$c1)
+      character_2 <- as.integer(cli_args$c2)
+      health <- as.integer(cli_args$health)
+      if (character_1 < 1 || character_1 > length(characters)) {
+        stop("Character 1 is not a valid index in the character file!")
+      }
+      if (character_2 < 1 || character_2 > length(characters)) {
+        stop("Character 2 is not a valid index in the character file!")
+      }
+      winner <- battle(
+        characters[[character_1]],
+        characters[[character_2]],
+        health = health
+      )
+      exit_status <- 0
+    },
+    error = function(cond) {
+      logger$error(conditionMessage(cond))
+      logger$fatal("An error occurred while running the script!")
+      return(1)
+    },
+    warning = function(cond) {
+      logger$warn(conditionMessage(cond))
+      logger$warn("A warning occurred while running the script!")
+      return(1)
+    },
+    finally = {}
   )
 
+  logger$info("Script finished with exit code {exit_status}.")
   if (is_script) {
-    q(status = 0)
+    q(status = exit_status)
   }
-  return(0)
+  return(exit_status)
 }
 
 main()
