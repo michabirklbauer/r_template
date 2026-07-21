@@ -9,6 +9,8 @@
 
 library(testthat)
 
+source("lib/main.R")
+
 test_results <- testthat::test_dir(
   "tests/testthat",
   stop_on_failure = TRUE,

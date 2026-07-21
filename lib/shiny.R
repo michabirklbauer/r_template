@@ -60,4 +60,4 @@ server <- function(input, output, session) {
   })
 }
 
-shinyApp(ui, server)
+app <- shinyApp(ui, server)

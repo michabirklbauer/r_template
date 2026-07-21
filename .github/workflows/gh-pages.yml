@@ -54,13 +54,13 @@ jobs:
     #    restore-keys: |
     #      ${{ runner.os }}-vitepress-
     - name: Setup Pages
-      uses: actions/configure-pages@v5
+      uses: actions/configure-pages@v6
     - name: Install dependencies
       run: pnpm install # or npm ci / yarn install / bun install
     - name: Build with VitePress
       run: pnpm docs:build # or npm run docs:build / yarn docs:build / bun run docs:build
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v5
       with:
         path: docs/.vitepress/dist
 
@@ -75,4 +75,4 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
