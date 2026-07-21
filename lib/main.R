@@ -1,7 +1,5 @@
 #!/usr/bin/env Rscript
 
-renv::restore(prompt = FALSE)
-
 version <- "1.0.0"
 date <- "2026-07-20"
 
@@ -10,22 +8,31 @@ library(optparse)
 library(glue)
 
 source("lib/battle.R")
+source("lib/shiny.R")
 
 main <- function(cli_args = NULL) {
   parser <- optparse::OptionParser(
-    usage = "usage: %prog [-h] -f FILE [-a CHARACTER_1] [-b CHARACTER_2] [-p HEALTH] [--version]",
-    prog = "main.R",
+    usage = "usage: %prog [-h] [-s] -f FILE [-a CHARACTER_1] [-b CHARACTER_2] [-p HEALTH]",
+    prog = "run.R",
     description = "Battles two characters.",
     epilogue = glue("v{version} (c) Micha Birklbauer, 2026")
   ) |>
+    optparse::add_option(
+      c("-s", "--shiny"),
+      action = "store_true",
+      dest = "shiny",
+      default = FALSE,
+      help = "Run the script as a Shiny application."
+    ) |>
     optparse::add_option(
       c("-f", "--file"),
       action = "store",
       type = "character",
       dest = "file",
       metavar = "FILE",
+      default = NULL,
       help = "Character file to read characters from (str)",
-      required = TRUE
+      required = FALSE
     ) |>
     optparse::add_option(
       c("-a", "--character-1"),
@@ -68,8 +75,26 @@ main <- function(cli_args = NULL) {
     }
     cli_args <- optparse::parse_args(parser, args = cli_args)
   }
+
+  if (cli_args$shiny) {
+    logger$info("Starting Shiny application...")
+    shiny::runApp(app)
+    logger$info("Exited Shiny application.")
+    if (is_script) {
+      q(status = 0)
+    }
+    return(0)
+  }
+
   exit_status <- tryCatch(
     {
+      if (is.null(cli_args$file)) {
+        stop(
+          "Argument -f / --file is required when -s / --shiny is not given!",
+          call. = FALSE
+        )
+      }
+
       characters <- character_factory(cli_args$file)
       character_1 <- as.integer(cli_args$c1)
       character_2 <- as.integer(cli_args$c2)
@@ -112,5 +137,3 @@ main <- function(cli_args = NULL) {
   }
   return(exit_status)
 }
-
-main()
