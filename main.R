@@ -75,10 +75,16 @@ main <- function(cli_args = NULL) {
       character_2 <- as.integer(cli_args$c2)
       health <- as.integer(cli_args$health)
       if (character_1 < 1 || character_1 > length(characters)) {
-        stop("Character 1 is not a valid index in the character file!")
+        stop(
+          "Character 1 is not a valid index in the character file!",
+          call. = FALSE
+        )
       }
       if (character_2 < 1 || character_2 > length(characters)) {
-        stop("Character 2 is not a valid index in the character file!")
+        stop(
+          "Character 2 is not a valid index in the character file!",
+          call. = FALSE
+        )
       }
       winner <- battle(
         characters[[character_1]],
