@@ -9,6 +9,7 @@
 
 library(testthat)
 
+# Source main library file (and any additional files that need to be loaded):
 source("lib/main.R")
 
 test_results <- testthat::test_dir(

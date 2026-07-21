@@ -1,3 +1,8 @@
+#!/usr/bin/env Rscript
+
+# Learn more about testing with testthat here:
+# https://testthat.r-lib.org/reference/index.html
+
 test_that("Simple Character creation works", {
   expect_match(
     {
