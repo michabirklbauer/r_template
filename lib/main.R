@@ -22,7 +22,7 @@ main <- function(cli_args = NULL) {
       action = "store_true",
       dest = "shiny",
       default = FALSE,
-      help = "Run the script as a Shiny application."
+      help = "Run the script as a Shiny application"
     ) |>
     optparse::add_option(
       c("-f", "--file"),
