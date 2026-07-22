@@ -83,10 +83,10 @@ character_factory <- function(filename) {
   characters <- list()
   for (i in rownames(df)) {
     parsed_character <- Character$new(
-      as.character(df[i, "name"]),
-      as.character(df[i, "race"]),
-      as.numeric(df[i, "min_damage"]),
-      as.numeric(df[i, "max_damage"])
+      name = as.character(df[i, "name"]),
+      race = as.character(df[i, "race"]),
+      min_damage = as.numeric(df[i, "min_damage"]),
+      max_damage = as.numeric(df[i, "max_damage"])
     )
     characters[[i]] <- parsed_character
   }
