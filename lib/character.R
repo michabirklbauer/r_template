@@ -6,12 +6,21 @@ library(R6)
 
 Character <- R6Class(
   "Character",
+  private = list(
+    .name = NULL,
+    .race = NULL,
+    .min_damage = NULL,
+    .max_damage = NULL,
+    .avg_damage = NULL
+  ),
+  active = list(
+    name = function() private$.name,
+    race = function() private$.race,
+    min_damage = function() private$.min_damage,
+    max_damage = function() private$.max_damage,
+    avg_damage = function() private$.avg_damage
+  ),
   public = list(
-    name = NULL,
-    race = NULL,
-    min_damage = NULL,
-    max_damage = NULL,
-    avg_damage = NULL,
     initialize = function(name, race = NULL, min_damage = 0, max_damage = 0) {
       checkmate::assert_string(name)
       checkmate::assert_string(race, null.ok = TRUE)
@@ -22,21 +31,25 @@ Character <- R6Class(
       )
       checkmate::assert_number(min_damage)
       checkmate::assert_number(max_damage)
-      self$name <- name
-      self$race <- race
+      private$.name <- name
+      private$.race <- race
       if (min_damage > max_damage) {
-        self$min_damage <- max_damage
-        self$max_damage <- min_damage
+        private$.min_damage <- max_damage
+        private$.max_damage <- min_damage
       } else {
-        self$min_damage <- min_damage
-        self$max_damage <- max_damage
+        private$.min_damage <- min_damage
+        private$.max_damage <- max_damage
       }
-      self$avg_damage <- (self$min_damage + self$max_damage) / 2.0
+      private$.avg_damage <- (private$.min_damage + private$.max_damage) / 2.0
+    },
     },
     attack = function() {
-      self$min_damage + (self$max_damage - self$min_damage) * runif(1)
+      private$.min_damage +
+        (private$.max_damage - private$.min_damage) * runif(1)
     }
-  )
+  ),
+  lock_objects = TRUE,
+  lock_class = TRUE,
 )
 
 character_factory <- function(filename) {
