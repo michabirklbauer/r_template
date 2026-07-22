@@ -2,7 +2,11 @@
 
 A work-in-progress template for R projects and scripts.
 
-# DOCKER
+## Checklist
+
+## Helpful Commands
+
+## DOCKER
 
 - clean builds
 - docker ignore: https://docs.docker.com/build/concepts/context/#dockerignore-files
