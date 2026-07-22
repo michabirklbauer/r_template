@@ -78,7 +78,7 @@ main <- function(cli_args = NULL) {
 
   if (cli_args$shiny) {
     logger$info("Starting Shiny application...")
-    shiny::runApp(app)
+    shiny::runApp(app, port = 8501, host = "0.0.0.0")
     logger$info("Exited Shiny application.")
     if (is_script) {
       q(status = 0)
