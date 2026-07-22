@@ -42,6 +42,30 @@ Character <- R6Class(
       }
       private$.avg_damage <- (private$.min_damage + private$.max_damage) / 2.0
     },
+    copy_with_update = function(update = list()) {
+      checkmate::assert_list(update)
+      Character$new(
+        name = if (!is.null(update$name)) {
+          update$name
+        } else {
+          private$.name
+        },
+        race = if (!is.null(update$race)) {
+          update$race
+        } else {
+          private$.race
+        },
+        min_damage = if (!is.null(update$min_damage)) {
+          update$min_damage
+        } else {
+          private$.min_damage
+        },
+        max_damage = if (!is.null(update$max_damage)) {
+          update$max_damage
+        } else {
+          private$.max_damage
+        }
+      )
     },
     attack = function() {
       private$.min_damage +
@@ -50,6 +74,7 @@ Character <- R6Class(
   ),
   lock_objects = TRUE,
   lock_class = TRUE,
+  cloneable = FALSE
 )
 
 character_factory <- function(filename) {
