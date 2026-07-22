@@ -14,6 +14,54 @@ test_that("Simple Character creation works", {
   )
 })
 
+test_that("Character immutability works", {
+  expect_error({
+    jb <- Character$new(name = "John Baldur")
+    jb$name <- "Astarion"
+  })
+})
+
+test_that("Character cloning works", {
+  expect_match(
+    {
+      jb <- Character$new(name = "John Baldur")
+      a <- jb$copy_with_update(list(name = "Astarion"))
+      a$name
+    },
+    "Astarion",
+    fixed = TRUE
+  )
+})
+
+test_that("Character immutability works upon cloning", {
+  jb <- Character$new(name = "John Baldur")
+  a <- jb$copy_with_update(list(name = "Astarion", race = "Elf"))
+  expect_match(
+    {
+      jb$name
+    },
+    "John Baldur",
+    fixed = TRUE
+  )
+  expect_null({
+    jb$race
+  })
+  expect_match(
+    {
+      a$name
+    },
+    "Astarion",
+    fixed = TRUE
+  )
+  expect_match(
+    {
+      a$race
+    },
+    "Elf",
+    fixed = TRUE
+  )
+})
+
 test_that("Simple Character attack works", {
   expect_equal(
     {
