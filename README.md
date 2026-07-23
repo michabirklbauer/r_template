@@ -1,3 +1,7 @@
+[![Format with Air](https://github.com/michabirklbauer/r_template/actions/workflows/air.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/air.yml)
+[![Lint with Jarl](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml)
+[![Test with testthat](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml)
+
 # r_template
 
 A work-in-progress template for R projects and scripts.
