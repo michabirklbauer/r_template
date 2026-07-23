@@ -89,8 +89,10 @@ template included in `docs`. It uses the [Catppuccin](https://catppuccin.com/) t
 
 - Adjust the `docs/.vitepress/config.mts` file to your needs.
 - Update the markdown files in `docs/md/`.
-- The documentation is automatically built via GitHub Actions, but you can see a
-  live preview or build it locally by doing the following:
+- The documentation is automatically built via
+  [GitHub Actions](https://docs.github.com/en/actions) using this
+  [workflow](https://github.com/michabirklbauer/r_template/blob/master/.github/workflows/gh-pages.yml),
+  but you can see a live preview or build it locally by doing the following:
   - Install [Node.js](https://nodejs.org/).
   - Install [pnpm](https://pnpm.io/).
   - Navigate to the `docs/` directory:
