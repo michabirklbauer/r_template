@@ -2,7 +2,7 @@
 [![Lint with Jarl](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml)
 [![Test with testthat](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml)
 
-# r_template
+# Template Repository for R projects and scripts
 
 A work-in-progress template for R projects and scripts.
 
