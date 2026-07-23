@@ -79,6 +79,42 @@ A work-in-progress template for R projects and scripts.
     Rscript run.R -s
     ```
 
+## Documentation
+
+This template features inline documentation using [roxygen2](https://roxygen2.r-lib.org/)
+syntax. For setting up an online documentation page there is a [VitePress](https://vitepress.dev/)
+template included in `docs`. It uses the [Catppuccin](https://catppuccin.com/) theme.
+
+### Adjusting the Documentation
+
+- Adjust the `docs/.vitepress/config.mts` file to your needs.
+- Update the markdown files in `docs/md/`.
+- The documentation is automatically built via GitHub Actions, but you can see a
+  live preview or build it locally by doing the following:
+  - Install [Node.js](https://nodejs.org/).
+  - Install [pnpm](https://pnpm.io/).
+  - Navigate to the `docs/` directory:
+    ```bash
+    cd docs
+    ```
+  - Install dependencies with `pnpm`:
+    ```bash
+    pnpm i
+    ```
+  - Show a live preview:
+    ```bash
+    pnpm docs:dev
+    ```
+  - Build the site locally:
+    ```bash
+    pnpm docs:build
+    ```
+
+### Alternatives for Documentation
+
+[Quarto]()
+would be a possible alternative for building documentation pages.
+
 ## Docker
 
 If you want to containerize your R project with [Docker](https://www.docker.com/)
