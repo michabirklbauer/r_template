@@ -27,7 +27,7 @@ features:
     linkText: View
   - title: Usage
     icon: 🚀
-    details: How to use the example in this template!
+    details: How to use the example script and code in this template!
     link: /usage
     linkText: View
   - title: About
