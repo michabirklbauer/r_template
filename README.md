@@ -6,7 +6,7 @@ A work-in-progress template for R projects and scripts.
 
 ## Helpful Commands
 
-## DOCKER
+## Docker
 
 If you want to containerize your R project with [Docker](https://www.docker.com/)
 there are a few things to keep in mind, as pointed out below. You may also find it
@@ -18,8 +18,8 @@ helpful to read through this
 Depending on your R environment you will need to install additional system dependencies
 in your Docker file. This mostly involves some trial and error but boils down to the
 following steps:
-- Checking the output of [renv::sysreqs()](https://rstudio.github.io/renv/reference/sysreqs.html)
-  , e.g. using:
+- Checking the output of [renv::sysreqs()](https://rstudio.github.io/renv/reference/sysreqs.html),
+  e.g. using:
   ```r
   renv::sysreqs(distro = "ubuntu:24.04", report = TRUE, collapse = TRUE)
   ```
