@@ -52,7 +52,7 @@ A work-in-progress template for R projects and scripts.
     ```r
     renv::install("bioc::pkg")
     ```
-- [air](https://posit-dev.github.io/air/):
+- [Air](https://posit-dev.github.io/air/):
   - Format files:
     ```bash
     air format
@@ -63,7 +63,7 @@ A work-in-progress template for R projects and scripts.
     ```bash
     air format --check
     ```
-- [jarl](https://jarl.etiennebacher.com/):
+- [Jarl](https://jarl.etiennebacher.com/):
   - Lint with `jarl`:
     ```bash
     jarl check .
