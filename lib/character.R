@@ -104,9 +104,9 @@ Character <- R6Class(
   cloneable = FALSE
 )
 
-character_factory <- function(filename) {
+character_factory <- function(filename, ...) {
   checkmate::assert_string(filename)
-  df <- readr::read_csv(filename)
+  df <- readr::read_csv(filename, ...)
   characters <- list()
   for (i in rownames(df)) {
     parsed_character <- Character$new(
