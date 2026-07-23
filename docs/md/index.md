@@ -25,4 +25,14 @@ features:
     details: Tooling for R scripts and projects!
     link: /tooling
     linkText: View
+  - title: Usage
+    icon: 🚀
+    details: How to use the example in this template!
+    link: /usage
+    linkText: View
+  - title: About
+    icon: ℹ️
+    details: About this template & where to get help!
+    link: /about
+    linkText: View
 ---
