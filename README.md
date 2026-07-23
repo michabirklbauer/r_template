@@ -2,7 +2,7 @@
 [![Lint with Jarl](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/jarl.yml)
 [![Test with testthat](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml/badge.svg)](https://github.com/michabirklbauer/r_template/actions/workflows/testthat.yml)
 
-# Template Repository for R projects and scripts
+# Template Repository for R Projects and Scripts
 
 A template repository for modern R development with [renv](https://rstudio.github.io/renv/)
 using [R6](https://r6.r-lib.org/) classes, validation with [checkmate](https://mllg.github.io/checkmate/),
