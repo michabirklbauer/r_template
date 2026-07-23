@@ -2,6 +2,7 @@
 
 library(tidyverse)
 library(checkmate)
+library(glue)
 library(R6)
 
 Character <- R6Class(
@@ -70,6 +71,32 @@ Character <- R6Class(
     attack = function() {
       private$.min_damage +
         (private$.max_damage - private$.min_damage) * runif(1)
+    },
+    plot = function() {
+      data.frame(
+        damage_type = factor(
+          c("Minimum", "Average", "Maximum"),
+          levels = c("Minimum", "Average", "Maximum")
+        ),
+        damage_value = c(
+          private$.min_damage,
+          private$.avg_damage,
+          private$.max_damage
+        )
+      ) |>
+        ggplot(aes(x = damage_type, y = damage_value)) +
+        geom_bar(
+          stat = "identity",
+          color = "black",
+          fill = "dodgerblue3",
+          width = 0.7
+        ) +
+        ggtitle(glue("Character: {private$.name}")) +
+        xlab("Damage Type") +
+        ylab("Damage") +
+        geom_text(aes(label = damage_value), vjust = -0.3, size = 3.0) +
+        theme_minimal() +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
     }
   ),
   lock_objects = TRUE,
@@ -77,9 +104,9 @@ Character <- R6Class(
   cloneable = FALSE
 )
 
-character_factory <- function(filename) {
+character_factory <- function(filename, ...) {
   checkmate::assert_string(filename)
-  df <- readr::read_csv(filename)
+  df <- readr::read_csv(filename, ...)
   characters <- list()
   for (i in rownames(df)) {
     parsed_character <- Character$new(
