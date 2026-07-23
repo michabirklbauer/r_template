@@ -15,6 +15,10 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 
 ## Checklist
 
+## Managing R Installations
+
+It's recommended to use [rig](https://github.com/r-lib/rig) - the R Installation Manager.
+
 ## Helpful Commands
 
 - [rig](https://github.com/r-lib/rig):
