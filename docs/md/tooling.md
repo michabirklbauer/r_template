@@ -1,5 +1,10 @@
 # Tooling
 
+Here is an overview of all the tools used in this template - including some helpful
+information on how to apply them - making your R code both nicer and more robust 😉.
+
+## Managing R Installations
+
 It's recommended to use [rig](https://github.com/r-lib/rig) - the R Installation
 Manager - for managing R installations.
 
