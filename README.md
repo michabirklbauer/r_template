@@ -115,7 +115,7 @@ template included in `docs`. It uses the [Catppuccin](https://catppuccin.com/) t
 ### Alternatives for Documentation
 
 [Quarto]()
-would be a possible alternative for building documentation pages.
+would be a possible and recommended alternative for building documentation pages.
 
 ## Docker
 
