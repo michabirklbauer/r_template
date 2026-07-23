@@ -15,6 +15,21 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 
 ## Checklist
 
+- [ ] Replace `YOURUSERNAME` and `IMAGENAME` in `.github/workflows/docker-image.yml` [or delete file].
+- [ ] Replace data in `data` with your own (test) data [or delete if you don't have data].
+- [ ] Adjust `.gitattributes` according to your needs [or delete file].
+- [ ] Adjust `.gitignore` according to your needs.
+- [ ] Setup your `CITATION.cff` according to your needs [or delete file].
+- [ ] Update attribution in `Dockerfile` and write image instructions, see also [Docker](#docker).
+- [ ] Replace copyright name in `LICENSE`.
+- [ ] Update the main script in `lib/main.R`.
+- [ ] Delete example `.R` files in `lib/` [and create your own].
+- [ ] Check if `tests/testthat.R` needs updating.
+- [ ] Write tests in `tests/testthat/`.
+- [ ] Document your code inline using [roxygen2 style](https://roxygen2.r-lib.org/).
+- [ ] Document your code/script by writing a documentation page, see [Documentation](#documentation).
+- [ ] Adjust this `README.md` to your needs!
+
 ## Managing R Installations
 
 It's recommended to use [rig](https://github.com/r-lib/rig) - the R Installation Manager.
