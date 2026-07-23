@@ -31,12 +31,18 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "Template", link: "/template" },
       { text: "Tooling", link: "/tooling" },
+      { text: "Usage", link: "/usage" },
+      { text: "About", link: "/about" },
     ],
     sidebar: [
       {
         items: [
           { text: "Template", link: "/template" },
           { text: "Tooling", link: "/tooling" },
+          { text: "Documentation", link: "/documentation" },
+          { text: "Docker", link: "/docker" },
+          { text: "Usage", link: "/usage" },
+          { text: "About", link: "/about" },
         ],
       },
     ],
