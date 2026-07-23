@@ -4,7 +4,14 @@
 
 # Template Repository for R projects and scripts
 
-A work-in-progress template for R projects and scripts.
+A template repository for modern R development with [renv](https://rstudio.github.io/renv/)
+using [R6](https://r6.r-lib.org/) classes, validation with [checkmate](https://mllg.github.io/checkmate/),
+logging with [lgr](https://s-fleck.github.io/lgr/), argument parsing with [optparse](https://github.com/trevorld/r-optparse/),
+and a [Shiny](https://shiny.posit.co/) web app interface.
+Formatted with [Air](https://posit-dev.github.io/air/),
+linted with [Jarl](https://jarl.etiennebacher.com/),
+and tested with [testthat](https://testthat.r-lib.org/) using
+[GitHub Actions](https://docs.github.com/en/actions).
 
 ## Checklist
 
