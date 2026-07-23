@@ -116,6 +116,7 @@ template included in `docs`. It uses the [Catppuccin](https://catppuccin.com/) t
 
 [Quarto]()
 would be a possible and recommended alternative for building documentation pages.
+If you build a package you might also want to consider [pkgdown](https://pkgdown.r-lib.org/).
 
 ## Docker
 
