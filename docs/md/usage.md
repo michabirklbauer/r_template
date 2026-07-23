@@ -1,6 +1,6 @@
 # Usage
 
-You can use the example R script/code provided in this template like as outlined
+You can use the example R script/code provided in this template as outlined
 below.
 
 ```text
@@ -54,7 +54,7 @@ INFO  [16:00:31.048] Script finished with exit code 0.
 
 ## Shiny
 
-To run the [Shiny](https://shiny.posit.co/) web app simply run the following command:
+To run the [Shiny](https://shiny.posit.co/) web app simply use the following command:
 
 ```bash
 Rscript run.R -s
