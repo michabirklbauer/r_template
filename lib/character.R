@@ -34,13 +34,8 @@ Character <- R6Class(
       checkmate::assert_number(max_damage)
       private$.name <- name
       private$.race <- race
-      if (min_damage > max_damage) {
-        private$.min_damage <- max_damage
-        private$.max_damage <- min_damage
-      } else {
-        private$.min_damage <- min_damage
-        private$.max_damage <- max_damage
-      }
+      private$.min_damage <- min(min_damage, max_damage)
+      private$.max_damage <- max(min_damage, max_damage)
       private$.avg_damage <- (private$.min_damage + private$.max_damage) / 2.0
     },
     copy_with_update = function(update = list()) {
