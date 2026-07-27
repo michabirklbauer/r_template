@@ -112,8 +112,8 @@ Character <- R6Class(
         (private$.max_damage - private$.min_damage) * runif(1)
     },
     #' @description
-    #' Plots the stats of the character.
-    #' @returns A plot of the character stats (type: `ggplot2::ggplot`).
+    #' Plots the attribute values of the character.
+    #' @returns A plot of the character attribute values (type: `ggplot2::ggplot`).
     #' @examples
     #' source("lib/main.R")
     #' jb <- Character$new(name="John Baldur")
