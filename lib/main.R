@@ -19,6 +19,7 @@ source("lib/shiny.R")
 #' source("lib/main.R")
 #' main(c("-f", "data/characters.csv"))
 main <- function(cli_args = NULL) {
+  # parser
   parser <- optparse::OptionParser(
     usage = "usage: %prog [-h] [-s] -f FILE [-a CHARACTER_1] [-b CHARACTER_2] [-p HEALTH]",
     prog = "run.R",
@@ -69,7 +70,11 @@ main <- function(cli_args = NULL) {
       default = 130,
       help = "Health of all characters (int) [default %default]"
     )
+
+  # check if script
   is_script <- is.null(cli_args)
+
+  # read arguments
   if (is_script) {
     cli_args <- optparse::parse_args(parser)
   } else {
@@ -83,6 +88,7 @@ main <- function(cli_args = NULL) {
     cli_args <- optparse::parse_args(parser, args = cli_args)
   }
 
+  # launch Shiny if -s or --shiny was given
   if (cli_args$shiny) {
     logger$info("Starting Shiny application...")
     shiny::runApp(app, port = 8501, host = "0.0.0.0")
@@ -93,6 +99,7 @@ main <- function(cli_args = NULL) {
     return(0)
   }
 
+  # main
   exit_status <- tryCatch(
     {
       if (is.null(cli_args$file)) {
@@ -106,6 +113,7 @@ main <- function(cli_args = NULL) {
       character_1 <- as.integer(cli_args$c1)
       character_2 <- as.integer(cli_args$c2)
       health <- as.integer(cli_args$health)
+
       if (character_1 < 1 || character_1 > length(characters)) {
         stop(
           "Character 1 is not a valid index in the character file!",
@@ -118,6 +126,7 @@ main <- function(cli_args = NULL) {
           call. = FALSE
         )
       }
+
       winner <- battle(
         characters[[character_1]],
         characters[[character_2]],
@@ -138,6 +147,7 @@ main <- function(cli_args = NULL) {
     finally = {}
   )
 
+  # exit
   logger$info("Script finished with exit code {exit_status}.")
   if (is_script) {
     q(status = exit_status)
