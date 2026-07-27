@@ -10,6 +10,14 @@ library(glue)
 source("lib/battle.R")
 source("lib/shiny.R")
 
+#' Main function
+#'
+#' @param cli_args Arguments passed to the parser (type: character vector).
+#'   Defaults to `NULL`.
+#' @returns Exit status (type: numeric, zero is success).
+#' @examples
+#' source("lib/main.R")
+#' main(c("-f", "data/characters.csv"))
 main <- function(cli_args = NULL) {
   parser <- optparse::OptionParser(
     usage = "usage: %prog [-h] [-s] -f FILE [-a CHARACTER_1] [-b CHARACTER_2] [-p HEALTH]",
