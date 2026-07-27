@@ -14,7 +14,7 @@ logger$config("logger.yaml")
 #' @param character_1 One of the two characters that should battle (type: Character).
 #' @param character_2 One of the two characters that should battle (type: Character).
 #' @param health The amount of hit points both characters have (type: numeric).
-#'   Defaults to 100.
+#'   Defaults to `100.0`.
 #' @returns The winner of the two characters (type: Character).
 #' @examples
 #' source("lib/main.R")
