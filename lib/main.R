@@ -70,9 +70,8 @@ main <- function(cli_args = NULL) {
       any.missing = FALSE,
       all.missing = FALSE
     )
-    if (length(cli_args)) {
-      checkmate::assert_character(cli_args)
-    }
+    checkmate::assert_character(cli_args)
+
     cli_args <- optparse::parse_args(parser, args = cli_args)
   }
 
