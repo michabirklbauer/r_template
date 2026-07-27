@@ -1,8 +1,12 @@
 #!/usr/bin/env Rscript
 
+library(palmerpenguins)
 library(tidyverse)
 library(shiny)
 library(bslib)
+
+# https://github.com/allisonhorst/palmerpenguins/
+data("penguins", package = "palmerpenguins")
 
 ui <- fluidPage(
   theme = bs_theme(bootswatch = "brite"),
