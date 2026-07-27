@@ -137,7 +137,10 @@ Character <- R6Class(
           fill = "dodgerblue3",
           width = 0.7
         ) +
-        ggtitle(glue("Character: {private$.name}")) +
+        ggtitle(glue(
+          "Character with name '{private$.name}' and race '{private$.race}':",
+          .null = "not set"
+        )) +
         xlab("Damage Type") +
         ylab("Damage") +
         geom_text(aes(label = damage_value), vjust = -0.3, size = 3.0) +
