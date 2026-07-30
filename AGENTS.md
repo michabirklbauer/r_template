@@ -11,13 +11,13 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 
 ## Repository Structure
 
-- `run.R` is the base script for running the application. It should not be modified!
-- The main script logic should go into `lib/main.R`.
+- `run.R` is the base R script for running the repository's application. It should not be modified!
+- The main R script logic should go into `lib/main.R`.
 - The [Shiny](https://shiny.posit.co/) app code should go into `lib/shiny.R`.
-- Any additional code should go into scripts in `lib/`.
+- Any additional code should go into R scripts in `lib/`.
 - Tests should go into the directory `tests/testthat/`.
 - The file `tests/testthat.R` should stay unmodified.
-- Modification of the `tests/testthat.R` is only required if code outside of `lib/main.R` is imported - but that is a bad practice!
+- Modification of the `tests/testthat.R` file is only required if code outside of `lib/main.R` is imported - but that is a bad practice!
 - Documentation should go into the `docs/` directory.
 
 ## Setup
@@ -33,12 +33,12 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 
 - Use [rig](https://github.com/r-lib/rig) - the R Installation Manager - for managing R installations.
 - Use `rig add` to a install an R version:
-  - Install a specific R version, e.g. `4.6.1`:
+  - Example: Install a specific R version, e.g. `4.6.1`:
     ```bash
     rig add 4.6.1
     ```
 - Use `rig default` to set a default R version, which should be the version required by `renv`:
-  - Set a default R version, e.g. `4.6.1`:
+  - Example: Set a default R version, e.g. `4.6.1`:
     ```bash
     rig default 4.6.1
     ```
@@ -46,7 +46,7 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 ## Managing the R Environment
 
 - Use [renv](https://rstudio.github.io/renv/) to manage the projects R environment.
-- When launching an R session for the first time in the repository, make sure to call `renv::restore()` in the R session.
+- When launching an R session for the first time in this repository, make sure to call `renv::restore()` in the R session.
 - Alternatively, run `Rscript -e "renv::restore()"` in a bash or similar shell.
 - Generally, to restore an R environment at any time, run:
   ```bash
@@ -99,7 +99,7 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 - Use [testthat](https://testthat.r-lib.org/) for testing R code.
 - Tests should go into the directory `tests/testthat/`.
 - The file `tests/testthat.R` should stay unmodified.
-- Modification of the `tests/testthat.R` is only required if code outside of `lib/main.R` is imported - but that is a bad practice!
+- Modification of the `tests/testthat.R` file is only required if code outside of `lib/main.R` is imported - but that is a bad practice!
 - Run `Rscript -e "source('tests/testthat.R')"` to run all tests. The process should exit with code 0 if all tests pass.
 
 ## Documentation
@@ -108,9 +108,9 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 - Use the files in `docs/` for setting up `html` documentation.
 - The `html` documentation is built using [VitePress](https://vitepress.dev/).
 
-### Adjusting the Documentation
+### Adjusting the `html` Documentation
 
-- Adjust the `docs/.vitepress/config.mts` to reflect the repository use case and name.
+- Adjust the `docs/.vitepress/config.mts` file to reflect the repository use case and name.
 - Change the markdown files in `docs/md/` to reflect the repository use case.
 - The documentation can be built locally by doing the following:
   - Installing [Node.js](https://nodejs.org/).
@@ -129,11 +129,11 @@ and tested with [testthat](https://testthat.r-lib.org/) using
     pnpm docs:build
     ```
 
-### Alternatives for Documentation
+### Alternatives for `html` Documentation
 
 - [Quarto](https://quarto.org/) would be a possible and recommended alternative for building documentation pages.
 - If the repository is used for building an R package, consider using [pkgdown](https://pkgdown.r-lib.org/).
-- Make sure to clarify with the user which documentation approach should be taken!
+- Make sure to clarify with the user which documentation approach should be taken when initially setting up the repository!
 
 ## Docker
 
