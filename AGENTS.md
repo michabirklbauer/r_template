@@ -91,7 +91,7 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 - Make sure that variables and functions are `snake_case` and classes are `CamelCase`. Constants should be capitalized `SNAKE_CASE`.
 - Use [R6](https://r6.r-lib.org/) classes for class implementations.
 - Function parameters should be type checked using [checkmate](https://mllg.github.io/checkmate/).
-- Use [lgr](https://s-fleck.github.io/lgr/) for logging state and events.
+- Use [lgr](https://s-fleck.github.io/lgr/) for logging state and events of R code.
 - Use [optparse](https://github.com/trevorld/r-optparse/) in the `lib/main.R` file to parse commandline arguments.
 
 ## Testing
