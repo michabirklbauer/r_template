@@ -84,7 +84,7 @@ and tested with [testthat](https://testthat.r-lib.org/) using
 ## Code Quality and Style
 
 - Use [Jarl](https://jarl.etiennebacher.com/) for linting.
-- Run `jarl check .` to make sure all the R code in the repository passes linting
+- Run `jarl check .` to make sure all the R code in the repository passes linting.
 - Use [Air](https://posit-dev.github.io/air/) for code formatting.
 - Run `air format` to format all R files.
 - Check with `air format --check` that all R files in the repository are properly formatted.
