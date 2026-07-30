@@ -158,3 +158,10 @@ and tested with [testthat](https://testthat.r-lib.org/) using
   git clean -f -d -X
   ```
 - Alternatively consider using a [.dockerignore](https://docs.docker.com/build/concepts/context/#dockerignore-files) file.
+
+## CI/CD
+
+- Workflows for [GitHub Actions](https://docs.github.com/en/actions) can be found in `.github/workflows`.
+- Pull requests that target `master` should come from the `develop` branch when using this template.
+- The `branch-protection.yml` workflow can be removed if pull requests targeting `master` should be allowed from any branch.
+- The `gh-pages.yml` workflow automatically deploys the `html` documentation to [GitHub Pages](https://docs.github.com/en/pages).
