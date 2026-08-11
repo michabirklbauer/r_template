@@ -1,5 +1,9 @@
 #!/usr/bin/env Rscript
 
+######################## WIP ########################
+# this code is still in development/review!
+# use this Shiny template with caution!
+
 library(palmerpenguins)
 library(tidyverse)
 library(shiny)
